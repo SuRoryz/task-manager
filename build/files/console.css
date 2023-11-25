@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #22b0ee;
+    --primary-color-light: #57c8fc;
+    --primary-color-dark: #0b80b3;
+    --primary-color-normal: #1291c8;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	color: white;
+    background-color: black;
+    font-family: "Consolas";
+}
+
+.main {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    min-height: 640px;
+    min-width: 640px;
+    align-items: center;
+	height: 890px;
+}
+
+.console-window {
+	display: flex;
+    position: relative;
+    flex-direction: column;
+	height: 100%;
+	width: 640px;
+}
+
+.console-log-window {
+	height: 90%;
+    width: 100%;
+    min-height: 590px;
+    border-radius: 3px 3px 0 0;
+    background-color: #000000;
+    border: 2px solid var(--primary-color-normal);
+    border-bottom: none;
+}
+
+.console-log-logs {
+	height: calc(100% - 20px);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.command-instanse {
+    min-height: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.command-instanse::before {
+    content: "[RCON]:";
+    padding-right: 0.5em;
+}
+
+.success {
+	color: #08ff00;
+}
+
+.command-instanse-username {
+	color: #d5d8da;
+}
+
+.command-instanse.other .command-instanse-command {
+    color: #b3b3b3;
+    padding-left: 7px;
+}
+
+.console-form {
+	background-color: #000000;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    border-radius: 0 0 3px 3px;
+    border: 2px solid var(--primary-color-normal);
+    border-top: none;
+}
+
+#console-form-form {
+	position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc !important;
+}
+
+#console-form-form-command {
+    border-radius: 3px 0 0 3px;
+    width: 84%;
+    height: 100%;
+    margin-left: 10px;
+    padding-left: 16px;
+    background: #000000;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+#console-form-form-command::placeholder {
+    color: #ffffff;
+}
+
+label {
+    font-size: 1.5em;
+    position: absolute;
+    left: 10px;
+    color: #cacaca;
+}
+
+#console-form-form-submit {
+    outline: none;
+    color: white;
+    border: none;
+    background-color: var(--primary-color-normal);
+    transition: 0.2s ease-in;
+    padding: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#console-form-form-submit:hover {
+    background-color: var(--primary-color-light);
+}
+
+.denied {
+	color: #ff0000 !important;
+}
+
+.logout {
+	cursor: pointer;
+	background-color: var(--primary-color-normal);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 25px;
+    width: 65px;
+    right: -3px;
+    border-radius: 0 0 0 3px;
+    transition: 0.2s ease-in;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.logout:hover {
+    background-color: var(--primary-color-light);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    pointer-events: auto;
+    background: #3a3a3a;
+    border-radius: 5px;
+    transition: 0.1s ease;
+}
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 0 5px 5px 0;
+}
+@media only screen and (hover: none) and (pointer: coarse){
+
+    body {
+        display: block;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        min-width: 0;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .console-window {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+    .console-log-window {
+        height: 90%;
+        border: none;
+        border-radius: 0;
+        min-height: 0;
+    }
+
+    .console-log-logs {
+        font-size: calc(5vw);
+    }
+
+    .console-form {
+        height: 10%;
+        border: none;
+        border-radius: 0;
+        position: inherit;
+        z-index: 9999;
+    }
+
+    #console-form-form {
+        width: 100%;
+        height: 100%;
+        position: inherit;
+    }
+
+    #console-form-form-command {
+        border-radius: 3px 0 0 3px;
+        width: 84%;
+        height: calc(5vw);
+        font-size: calc(5vw);
+        margin-left: 10px;
+        padding: 1em;
+        padding-left: 16px;
+        background: #212121;
+        outline: none;
+        border: none;
+        color: white;
+    }
+
+    .logout {
+        position: absolute;
+        top: 0;
+}
+}
